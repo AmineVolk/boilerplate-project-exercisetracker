@@ -3,7 +3,7 @@ var router = express.Router();
 let { resolve } = require("path");
 const { createUser } = require("./createUser");
 const { addExercise } = require("./addExercise/addExercise");
-const { getLog } = require("./getLog");
+const { getLog } = require("./getLog/getLog");
 
 router.get("/", (req, res) => {
   res.sendFile(resolve("views/index.html"));
