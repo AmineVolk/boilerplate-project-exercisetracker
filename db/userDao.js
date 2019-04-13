@@ -63,7 +63,7 @@ const updateUser = async (_id, log) => {
     if (err) {
       logger.warn(`Error when updateUser ${err}`);
     } else {
-      logger.info(`user updated ${JSON.stringify(user)}`);
+      logger.info(`user updated `);
     }
   });
 };

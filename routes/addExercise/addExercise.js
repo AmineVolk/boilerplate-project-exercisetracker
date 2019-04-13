@@ -11,9 +11,9 @@ module.exports.addExercise = async (req, res) => {
   if (user != "User not found") {
     if (checkFormValidityResult.isValid) {
       exercise = checkFormValidityResult.exercise;
-      const checkDateResult = checkDate(exercise);
+      const checkDateResult = checkDate(exercise.date);
       if (checkDateResult.isValid) {
-        exercise = checkDateResult.exercise;
+        exercise.date = checkDateResult.date;
         delete exercise.userId;
         const logBeforUpdating = user.log;
         logBeforUpdating.push(exercise);

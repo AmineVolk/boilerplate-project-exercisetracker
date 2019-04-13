@@ -7,6 +7,7 @@ module.exports.createUser = async (req, res) => {
     if (user === "User not found") {
       let addUserResult = await addUser(username);
       if (addUserResult != "Error") {
+        delete addUserResult.log;
         res.status(200).json(addUserResult);
       } else {
         res.status(500).json({ message: "Error to add user" });
